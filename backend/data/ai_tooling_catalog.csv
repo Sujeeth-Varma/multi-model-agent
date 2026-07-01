@@ -1,0 +1,24 @@
+title,snippet,category,source
+LangGraph Overview,"LangGraph is used to build stateful agent workflows with nodes, edges, transitions, and branching execution for LLM applications.",LangGraph,https://langchain-ai.github.io/langgraph/
+LangGraph State Management,"LangGraph manages application state across multiple agent steps using persistent checkpoints and graph execution.",LangGraph,https://langchain-ai.github.io/langgraph/concepts/
+LangGraph Human-in-the-Loop,"LangGraph supports human approval and intervention before continuing workflow execution.",LangGraph,https://langchain-ai.github.io/langgraph/
+LangGraph Multi-Agent Systems,"LangGraph enables multiple AI agents to collaborate through graph-based routing and shared state.",LangGraph,https://langchain-ai.github.io/langgraph/
+LangGraph Checkpointing,"Checkpointing allows LangGraph workflows to resume execution after interruptions without losing state.",LangGraph,https://langchain-ai.github.io/langgraph/
+
+LangChain Introduction,"LangChain provides abstractions for prompts, models, retrievers, tools, and agents for building LLM applications.",LangChain,https://python.langchain.com/docs/introduction/
+LangChain RAG,"LangChain supports Retrieval-Augmented Generation using document loaders, embeddings, vector stores, and retrievers.",LangChain,https://python.langchain.com/docs/tutorials/rag/
+LangChain Agents,"LangChain agents dynamically select tools and execute multi-step reasoning based on user requests.",LangChain,https://python.langchain.com/docs/concepts/agents/
+LangChain Prompt Templates,"Prompt templates simplify reusable prompt creation with variables and structured formatting.",LangChain,https://python.langchain.com/docs/concepts/prompt_templates/
+LangChain Memory,"LangChain offers memory abstractions for maintaining conversational context across interactions.",LangChain,https://python.langchain.com/docs/
+
+Redis Overview,"Redis is an in-memory data store commonly used for caching, messaging, and fast key-value storage.",Redis,https://redis.io/docs/latest/
+Redis Context Memory,"Redis can persist short-term conversation context, session data, and cached responses for AI applications.",Redis,https://redis.io/docs/latest/
+Redis Pub/Sub,"Redis Pub/Sub enables real-time messaging between distributed services through publish and subscribe channels.",Redis,https://redis.io/docs/latest/develop/interact/pubsub/
+Redis Vector Search,"Redis supports vector similarity search for semantic search and Retrieval-Augmented Generation systems.",Redis,https://redis.io/docs/latest/develop/ai/search-and-query/vectors/
+Redis Streams,"Redis Streams provide an append-only log data structure for event-driven and streaming applications.",Redis,https://redis.io/docs/latest/develop/data-types/streams/
+
+Langfuse Overview,"Langfuse provides observability, tracing, prompt management, and evaluation for LLM applications.",Langfuse,https://langfuse.com/docs
+Langfuse Tracing,"Langfuse records prompts, responses, latency, costs, metadata, and execution traces for AI systems.",Langfuse,https://langfuse.com/docs
+Langfuse Prompt Management,"Langfuse supports prompt versioning, deployment, and centralized prompt management.",Langfuse,https://langfuse.com/docs/prompts/overview
+Langfuse Evaluation,"Langfuse evaluates LLM outputs using datasets, quality scores, and human feedback.",Langfuse,https://langfuse.com/docs/evaluation
+Langfuse Analytics,"Langfuse dashboards provide insights into usage, latency, token consumption, and application performance.",Langfuse,https://langfuse.com/docs
