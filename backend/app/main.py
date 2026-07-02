@@ -6,7 +6,9 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.config.settings import settings
 from app.routers import auth, health
+from app.logging_config import configure_uvicorn_logging
 
+configure_uvicorn_logging()
 logger = logging.getLogger(__name__)
 
 app = FastAPI(
