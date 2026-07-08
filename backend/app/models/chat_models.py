@@ -15,6 +15,8 @@ class SearchResult(BaseModel):
     snippet: str
     score: float
     source: str 
+    page_number: Optional[int] = None
+    file_name: Optional[str] = None
 
 class AgentResult(BaseModel):
     agent: str
@@ -22,7 +24,7 @@ class AgentResult(BaseModel):
     metadata: Dict[str, Any] = Field(default_factory=dict)
 
 class ChatResponse(BaseModel):
-    conversation_id: int
+    conversation_id: str
     route: str
     answer: str
     agents_used: List[str]
