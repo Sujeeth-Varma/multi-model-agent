@@ -21,6 +21,41 @@ graph TD
     end
 ```
 
+### Supervisor Routing Workflow
+
+The Supervisor Agent dynamically routes incoming user prompts to the correct processing nodes. The decision workflow operates as follows:
+
+```mermaid
+flowchart TD
+    Start([User Prompt Received]) --> CacheCheck{Cache Check: Redis}
+    CacheCheck -->|Cache Hit| ReturnCache[Return cached response]
+    CacheCheck -->|Cache Miss| CheckRouting{Routing Mode?}
+    
+    CheckRouting -->|LLM Routing| LLMCall[Call LLM for Routing Decision]
+    LLMCall -->|Success| ParseRoute{Match Route?}
+    LLMCall -->|Failure| KeywordRouting[Keyword-Based Routing]
+    
+    CheckRouting -->|Keyword Routing| KeywordRouting
+    
+    ParseRoute -->|greeting| RouteGreeting[Greeting Route]
+    ParseRoute -->|search| RouteSearch[Search Route]
+    ParseRoute -->|summary| RouteSummary[Summary Route]
+    ParseRoute -->|parallel / other| RouteParallel[Parallel Route]
+    
+    KeywordRouting -->|Exact Greeting Keyword| RouteGreeting
+    KeywordRouting -->|Search Keywords| RouteSearch
+    KeywordRouting -->|Other / Default| RouteParallel
+    
+    RouteGreeting --> EndGreeting[Return Greeting Reply]
+    RouteSearch --> EndSearch[Invoke Search Agent only]
+    RouteSummary --> EndSummary[Invoke Summary Agent only]
+    
+    RouteParallel --> ParallelExec[Invoke Search & Summary in Parallel]
+    ParallelExec --> GroundingCheck{Elasticsearch Results found?}
+    GroundingCheck -->|Yes| GroundedLLM[Call LLM for Grounded Answer synthesis]
+    GroundingCheck -->|No| FallbackSummary[Fallback to Summary Output]
+```
+
 ### 1. Frontend Console
 * **Core**: Vite + React 19 + TypeScript.
 * **Routing**: React Router v7 (clean sub-path routing).
